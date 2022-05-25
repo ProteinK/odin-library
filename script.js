@@ -33,6 +33,12 @@ function addBookToLibrary(name, author, pages, read) {
   renderBooks();
 }
 
+function toggleRead(e) {
+  let index = Number(this.getAttribute('data-index'));
+  myLibrary[index].read = !myLibrary[index].read;
+  renderBooks();
+}
+
 function deleteBook(e) {
   let index = Number(this.getAttribute('data-index'));
   myLibrary.splice(index, 1);
@@ -44,12 +50,22 @@ function renderBooks() {
   myLibrary.forEach((book, i) => {
     const bookDiv = document.createElement('div');
     bookDiv.innerHTML =
-      `<h3>${book.name}</h3><h4>${book.author}</h4>${book.pages} pages<br>${book.read ? "read" : "not read"}`;
-    let button = document.createElement('button');
-    button.textContent = 'Delete';
-    button.addEventListener('click', deleteBook);
-    button.setAttribute('data-index', i);
-    bookDiv.appendChild(button);
+      `<h3>${book.name}</h3><h4>${book.author}</h4><p>${book.pages} pages</p><p>${book.read ? "read" : "not read"}</p>`;
+
+    let readButton = document.createElement('button');
+    readButton.textContent = 'Read/Unread';
+    readButton.addEventListener('click', toggleRead);
+    readButton.classList.add('read-button');
+    readButton.setAttribute('data-index', i);
+
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', deleteBook);
+    deleteButton.classList.add('delete-button');
+    deleteButton.setAttribute('data-index', i);
+
+    bookDiv.appendChild(readButton);
+    bookDiv.appendChild(deleteButton);
     bookDiv.classList.add('book');
     container.appendChild(bookDiv);
   });
