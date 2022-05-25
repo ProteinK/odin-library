@@ -9,13 +9,19 @@ h1 {
 .book {
   background-color: rgb(23, 177, 207);
   box-shadow: 2px 2px 5px black;
-  height: 150px;
+  height: 160px;
   width: 300px;
   padding: 20px 10px;
   box-sizing: border-box;
   border-radius: 15px;
   border-left: 10px solid orange;
   color: white;
+  display: grid;
+}
+
+.book button {
+  font-size: 1rem;
+  justify-self: end;
 }
 
 .book h3,

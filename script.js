@@ -33,12 +33,23 @@ function addBookToLibrary(name, author, pages, read) {
   renderBooks();
 }
 
+function deleteBook(e) {
+  let index = Number(this.getAttribute('data-index'));
+  myLibrary.splice(index, 1);
+  renderBooks();
+}
+
 function renderBooks() {
   container.innerHTML = '';
   myLibrary.forEach((book, i) => {
     const bookDiv = document.createElement('div');
     bookDiv.innerHTML =
       `<h3>${book.name}</h3><h4>${book.author}</h4>${book.pages} pages<br>${book.read ? "read" : "not read"}`;
+    let button = document.createElement('button');
+    button.textContent = 'Delete';
+    button.addEventListener('click', deleteBook);
+    button.setAttribute('data-index', i);
+    bookDiv.appendChild(button);
     bookDiv.classList.add('book');
     container.appendChild(bookDiv);
   });
