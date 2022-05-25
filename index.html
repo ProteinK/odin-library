@@ -17,8 +17,27 @@
 
   <h2>Books:</h2>
   <div class="container">
-
   </div>
+  <button id="newbook">New Book</button>
+  <form action="#" method="post" class="hidden">
+    <div class="form-control">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-control">
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" required>
+    </div>
+    <div class="form-control">
+      <label for="pages">Pages:</label>
+      <input type="number" id="pages" name="pages" required>
+    </div>
+    <div class="form-control">
+      <input type="checkbox" name="read" id="read">
+      <label for="read">Read</label>
+    </div>
+    <button type="submit">Add</button>
+  </form>
 
   <script src="script.js"></script>
 </body>

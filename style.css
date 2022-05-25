@@ -34,4 +34,16 @@
   grid-template-columns: repeat(4, 1fr);
   row-gap: 20px;
   column-gap: 15px;
+  margin-bottom: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  margin-bottom: 30px;
+  border-radius: 15px;
+  padding: 10px 30px;
+  font-size: 1.2rem;
 }
