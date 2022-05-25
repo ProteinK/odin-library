@@ -2,6 +2,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+  text-align: center;
+}
+
 .book {
   background-color: rgb(23, 177, 207);
   box-shadow: 2px 2px 5px black;
@@ -46,4 +50,35 @@ button {
   border-radius: 15px;
   padding: 10px 30px;
   font-size: 1.2rem;
+}
+
+.form-control {
+  display: grid;
+  grid-template-columns: 100px 300px;
+  font-size: 1.5rem;
+}
+
+input {
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background-color: rgb(211, 211, 211);
+  font-size: inherit;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 1px 1px 5px black;
+  background-color: rgb(190, 198, 223);
+}
+
+.form-container {
+  display: grid;
+  row-gap: 10px;
+}
+
+form {
+  margin: 0 auto;
+  width: 400px;
 }
